@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* SentinelPay — Modern Fintech SaaS Aesthetic (PayPal & Stripe inspired) */
+@theme {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-raised: #f1f5f9;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-faint: #94a3b8;
+  
+  /* Modern Fintech Electric Blue Palette */
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-dark: #1e40af;
+  --color-accent-bg: #eff6ff;
+  --color-accent-line: #bfdbfe;
+
+  --color-pass: #16a34a;
+  --color-pass-bg: #f0fdf4;
+  --color-pass-line: #bbf7d0;
+  
+  --color-warn: #f59e0b;
+  --color-warn-bg: #fffbeb;
+  --color-warn-line: #fde68a;
+  
+  --color-block: #dc2626;
+  --color-block-bg: #fef2f2;
+  --color-block-line: #fecaca;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure all interactive elements show the hand cursor */
+button,
+[role="button"],
+select,
+summary,
+a,
+input[type="submit"],
+input[type="button"],
+label[for],
+.clickable {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"]:disabled,
+.clickable:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* Crisp scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Subtle micro-interactions */
+.interactive-card {
+  transition: all 0.15s ease-in-out;
+}
+.interactive-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+}
+
+.paypal-btn {
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.paypal-btn:hover {
+  filter: brightness(1.03);
+  transform: translateY(-0.5px);
+}
+.paypal-btn:active {
+  transform: translateY(0.5px) scale(0.99);
+}
